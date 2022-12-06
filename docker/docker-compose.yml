@@ -16,6 +16,8 @@ services:
       - MAIL_URL=smtp://localhost:1025
     depends_on:
       - database
+    tty: true
+    command: our_profile/setup.sh
 
   our_profile-web:
     image: nginx
