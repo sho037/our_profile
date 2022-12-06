@@ -2,6 +2,7 @@ version: "3"
 services:
   our_profile-app:
     image: our_profile-app
+    container_name: our_profile-app
     build:
       context: .
       dockerfile: our_profile-app/Dockerfile
@@ -20,8 +21,8 @@ services:
     command: our_profile/setup.sh
 
   our_profile-web:
-    image: nginx
-    container_name: our_profile-web
+    image: our_profile-nginx
+    container_name: our_profile-nginx
     build:
       context: .
       dockerfile: nginx/Dockerfile
@@ -30,17 +31,17 @@ services:
     ports:
       - 3000:80
     volumes:
-      # - ./nginx/conf.d:/etc/nginx/conf.d
-      # - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      # - ./nginx/ssl:/etc/nginx/ssl
-      # - ./nginx/log:/var/log/nginx
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/log:/var/log/nginx
       - ..:/var/www/html
     working_dir: /var/www/html
     tty: true
 
   database:
     image: our_profile-mysql
-    container_name: our_profile-db
+    container_name: our_profile-mysql
     build:
       context: .
       dockerfile: mysql/Dockerfile
