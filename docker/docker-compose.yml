@@ -6,11 +6,13 @@ services:
     build:
       context: ../.
       dockerfile: docker/our_profile-app/Dockerfile
+    volumes:
+      - ../.:/our_profile
+    working_dir: /our_profile
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
       - "3000:3000"
-    volumes:
-      - ../.:/our_profile
+    
     environment:
       - NODE_ENV=development
       - PORT=3000
