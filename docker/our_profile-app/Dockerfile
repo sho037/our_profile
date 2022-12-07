@@ -12,7 +12,7 @@ COPY . /our_profile
 
 COPY docker/out_profile-app/entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
