@@ -9,7 +9,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/usr/src/app
+      - ../.:/our_profile
     environment:
       - NODE_ENV=development
       - PORT=3000
@@ -31,7 +31,7 @@ services:
     ports:
       - 3000:80
     volumes:
-      - ..:/var/www/html
+      - ../.:/var/www/html
     working_dir: /var/www/html
     tty: true
 
@@ -53,4 +53,4 @@ services:
     tty: true
 
 volumes:
-  dbdata:
+  database:
