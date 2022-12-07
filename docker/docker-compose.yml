@@ -29,11 +29,13 @@ services:
     environment:
       TZ: "Asia/Tokyo"
     ports:
-      - 3000:80
+      - 80:3000
     volumes:
       - ../.:/var/www/html
     working_dir: /var/www/html
     tty: true
+    depends_on:
+      - our_profile-app
 
   database:
     image: our_profile-mysql
