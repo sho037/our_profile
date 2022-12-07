@@ -4,8 +4,8 @@ services:
     image: our_profile-app
     container_name: our_profile-app
     build:
-      context: .
-      dockerfile: our_profile-app/Dockerfile
+      context: ../.
+      dockerfile: docker/our_profile-app/Dockerfile
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
       - "3000:3000"
@@ -24,8 +24,8 @@ services:
     image: our_profile-nginx
     container_name: our_profile-nginx
     build:
-      context: .
-      dockerfile: nginx/Dockerfile
+      context: ../.
+      dockerfile: docker/nginx/Dockerfile
     environment:
       TZ: "Asia/Tokyo"
     ports:
@@ -39,8 +39,8 @@ services:
     image: our_profile-mysql
     container_name: our_profile-mysql
     build:
-      context: .
-      dockerfile: mysql/Dockerfile
+      context: ../.
+      dockerfile: docker/mysql/Dockerfile
     environment:
       TZ: "Asia/Tokyo"
       MYSQL_ROOT_PASSWORD: password
