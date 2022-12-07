@@ -17,7 +17,7 @@ services:
       - ROOT_URL=http://localhost:3000
       - MAIL_URL=smtp://localhost:1025
     depends_on:
-      - database
+      - our_profile-mysql
     tty: true
 
   our_profile-nginx:
@@ -37,7 +37,7 @@ services:
     depends_on:
       - our_profile-app
 
-  database:
+  our_profile-mysql:
     image: our_profile-mysql
     container_name: our_profile-mysql
     build:
