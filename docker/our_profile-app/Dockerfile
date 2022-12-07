@@ -10,7 +10,7 @@ COPY docker/our_profile-app/Gemfile.lock /our_profile/Gemfile.lock
 RUN bundle install --path vendor/bundle
 COPY . /our_profile
 
-COPY docker/out_profile-app/entrypoint.sh /usr/bin/
+COPY docker/out_profile-app/entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
