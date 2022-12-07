@@ -5,7 +5,14 @@ RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN gem update --system && gem install solargraph rails
 RUN mkdir /our_profile
 WORKDIR /our_profile
-# RUN rails new our_profile --skip-bundle
-# COPY Gemfile Gemfile.lock ./
-# RUN bundle install --path vendor/bundle
-# COPY . .
+COPY Gemfile /our_profile/Gemfile
+COPY Gemfile.lock /our_profile/Gemfile.lock
+RUN bundle install --path vendor/bundle
+COPY ../../. /our_profile
+
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+
+EXPOSE 3000
+CMD ["rails", "server", "-b", "0.0.0.0"]
