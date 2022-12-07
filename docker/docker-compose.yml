@@ -20,22 +20,22 @@ services:
       - our_profile-mysql
     tty: true
 
-  our_profile-nginx:
-    image: our_profile-nginx
-    container_name: our_profile-nginx
-    build:
-      context: ../.
-      dockerfile: docker/nginx/Dockerfile
-    environment:
-      TZ: "Asia/Tokyo"
-    ports:
-      - "3000:80"
-    volumes:
-      - ../.:/var/www/html
-    working_dir: /var/www/html
-    tty: true
-    depends_on:
-      - our_profile-app
+  # our_profile-nginx:
+  #   image: our_profile-nginx
+  #   container_name: our_profile-nginx
+  #   build:
+  #     context: ../.
+  #     dockerfile: docker/nginx/Dockerfile
+  #   environment:
+  #     TZ: "Asia/Tokyo"
+  #   # ports:
+  #   #   - "3000:80"
+  #   volumes:
+  #     - ../.:/var/www/html
+  #   working_dir: /var/www/html
+  #   tty: true
+  #   depends_on:
+  #     - our_profile-app
 
   our_profile-mysql:
     image: our_profile-mysql
