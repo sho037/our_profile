@@ -1,4 +1,5 @@
 #!/bin/bash
+# このファイルは使用していません
 if [ -f Gemfile ] ; then
   bundle install --path vendor/bundle
 else
