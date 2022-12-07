@@ -18,7 +18,7 @@ services:
     depends_on:
       - database
     tty: true
-    command: our_profile/setup.sh
+    command: our_profile-app/setup.sh
 
   our_profile-web:
     image: our_profile-nginx
