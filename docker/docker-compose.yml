@@ -20,7 +20,7 @@ services:
     tty: true
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
 
-  our_profile-web:
+  our_profile-nginx:
     image: our_profile-nginx
     container_name: our_profile-nginx
     build:
