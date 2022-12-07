@@ -1,7 +1,7 @@
 {
   "name": "our_profile-app",
   "dockerComposeFile": "../docker/docker-compose.yml",
-  "workspaceFolder": "/usr/src/app",
+  "workspaceFolder": "/our_profile",
   "service": "our_profile-app",
   "forwardPorts": [3000],
   "remoteUser": "root",
