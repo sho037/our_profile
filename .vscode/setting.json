@@ -1,0 +1,23 @@
+{
+    "[erb]": {
+      "efitor.tabsize": 2
+    },
+    "[ruby]": {
+      "editor.tabsize": 2
+    },
+    "[html]": {
+      "editor.tabsize": 2
+    },
+    "[css]": {
+      "editor.tabsize": 2
+    },
+    "[javascript]": {
+      "editor.tabsize": 2
+    },
+    "[json]": {
+      "editor.tabsize": 2
+    },
+    "[markdown]": {
+      "editor.tabsize": 2
+    }
+  }
