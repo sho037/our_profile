@@ -2,6 +2,7 @@ development:
   <<: *default
   database: myapp_development
   host: db
+  encoding: utf8
   username: root
   password: password
 
@@ -12,5 +13,6 @@ test:
   <<: *default
   database: myapp_test
   host: db
+  encoding: utf8
   username: root
   password: password
